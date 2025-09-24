@@ -1,16 +1,46 @@
-.food-display{
-    margin-top: 30px;
+/* FoodDisplay.css */
+
+.food-display {
+  padding: 60px 8%;
+  color: #ffffff;
+  text-align: center;
 }
 
-.food-display h2{
-    font-size: max(2vw,24px);
-    font-weight: 600;
+.food-display h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #ff6600;
+  font-weight: 600;
 }
 
+/* Grid Layout */
 .food-display-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(240px,1fr));
-    margin-top: 30px;
-    gap: 30px;
-    row-gap: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+/* FoodItem wrapper (safety styling in case FoodItem.css is not strict) */
+.food-display-list > * {
+  background: #1a1a1a;
+  border-radius: 14px;
+  padding: 20px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.food-display-list > *:hover {
+  transform: translateY(-6px);
+  border-color: #ff6600;
+  box-shadow: 0 0 15px rgba(255, 102, 0, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .food-display {
+    padding: 40px 5%;
+  }
+  .food-display h2 {
+    font-size: 1.6rem;
+  }
 }

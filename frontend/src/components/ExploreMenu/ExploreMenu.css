@@ -1,66 +1,89 @@
+/* ExploreMenu.css */
+
 .explore-menu {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  text-align: center;
+  padding: 60px 5%;
+  color: #ffffff;
 }
 
-.explore-menu h1{
-    color: #262626;
-    font-weight: 500;
+.explore-menu h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
 }
 
 .explore-menu-text {
-    max-width: 60%;
-    columns: #808080;
+  max-width: 700px;
+  margin: 0 auto 30px auto;
+  font-size: 1.1rem;
+  color: #cccccc;
+  line-height: 1.6;
 }
 
+/* Horizontal scroll */
 .explore-menu-list {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 30px;
-    text-align: center;
-    margin: 20px 0px;
-    overflow-x: scroll;
-}
-
-.explore-menu-list::-webkit-scrollbar{
-    display: none;
-}
-
-.explore-menu-list-item img{
-    width: 7.5vw;
-    min-width: 80px;
-    cursor: pointer;
-    border-radius: 50%;
-    transition: 0.2s;
-}
-
-.explore-menu-list-item p{
-    margin-top: 10px;
-    color: #747474;
-    font-size: max(1.4vw,16px);
-    cursor: pointer;
-}
-
-.explore-menu hr{
-    margin: 10px 0px;
-    height: 2px;
-    background-color: #e2e2e2;
-    border: none;
-}
-
-.explore-menu-list-item .active {
-  border: 4px solid tomato;
-  padding: 2px;
-}
-
-@media (max-width:1050px) {
-    .explore-menu-text{
-        max-width: 100%;
-        font-size: 14px;
-    }
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 10px 20px 20px 20px; /* 👈 left & right padding add */
+  scroll-padding: 20px; /* 👈 pehle aur last item ke liye safe area */
+  scrollbar-width: thin;
+  scrollbar-color: #ff6600 #1a1a1a;
 }
 
 
+.explore-menu-list::-webkit-scrollbar {
+  height: 8px;
+}
+.explore-menu-list::-webkit-scrollbar-track {
+  background: #1a1a1a;
+  border-radius: 10px;
+}
+.explore-menu-list::-webkit-scrollbar-thumb {
+  background: #ff6600;
+  border-radius: 10px;
+}
 
+.explore-menu-list-item {
+  flex: 0 0 auto;
+  background: #1a1a1a;
+  border: 2px solid transparent;
+  border-radius: 14px;
+  padding: 15px;
+  cursor: pointer;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  width: 140px;
+  text-align: center;
+  overflow: visible;
+}
+
+.explore-menu-list-item:hover {
+  transform: scale(1.07); /* scale instead of translate */
+  border-color: #ff6600;
+  box-shadow: 0 0 15px rgba(255, 102, 0, 0.5);
+}
+
+.explore-menu-list-item.active {
+  border-color: #ff6600;
+  background: linear-gradient(145deg, #1a1a1a, #262626);
+}
+
+.explore-menu-list-item img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.explore-menu-list-item p {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.explore-menu hr {
+  margin-top: 40px;
+  border: none;
+  border-top: 1px solid #333;
+}
