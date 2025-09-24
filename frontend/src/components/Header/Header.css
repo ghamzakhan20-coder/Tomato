@@ -95,3 +95,13 @@
     font-size: 0.9rem;
   }
 }
+
+.hero-section {
+  display: flex;
+  flex-direction: column; /* sab ek column mein */
+  justify-content: center; /* vertical center */
+  align-items: center; /* horizontal center */
+  text-align: center; /* text ko center align karne ke liye */
+  height: 100vh; /* poore screen ke beech mein lane ke liye */
+  padding: 20px;
+}
